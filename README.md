@@ -3,7 +3,7 @@
 ## Introduction
 Code for the New Zealand version of Single Transferable Vote (STV) written in OCaml. New Zealand STV uses Meek's method for transferring votes.
 
-This OCaml code is based on the pascal code written by David Hill and produces identical reports when run. A copy of [David Hill's pascal code](https://archive.org/details/meek-method-stv-of-dr-david-hill-david-hill-richard-lung/page/18/mode/2up?q=procedure+multiply) is included in the docs folder. This code is based on an earlier version ([Algorithm123](https://www.dia.govt.nz/diawebsite.NSF/Files/meekm/%24file/meekm.pdf)), which is also included.
+This OCaml code is based on the pascal code written by David Hill and produces matching results when run. A copy of [David Hill's pascal code](https://archive.org/details/meek-method-stv-of-dr-david-hill-david-hill-richard-lung/page/18/mode/2up?q=procedure+multiply) is included in the docs folder. This code is based on an earlier version ([Algorithm123](https://www.dia.govt.nz/diawebsite.NSF/Files/meekm/%24file/meekm.pdf)), which is also included.
 
 
 The OCaml code aligns with the prescription for the New Zealand method of counting single transferable votes in New Zealand's Local Electoral Regulations 2001, [Schedule 1A](https://legislation.govt.nz/regulation/public/2001/0145/latest/DLM57125.html)
@@ -51,3 +51,12 @@ _build/install/default/bin/nzstv -v <blt file>
 # Example
 _build/install/default/bin/nzstv -v blt/Hill.blt
 ```
+## Performance
+
+Hardware: Macbook M1 with 8 GB ram.
+
+Blt file: NSW.blt which represents the ballots of 4.8 million voters, obtained from Lee Yingtong Li's [STV database](https://gitlab.com/RunasSudo/stvdb/-/tree/master/Australian%20Senate/2022?ref_type=heads)
+
+Time to complete processing: 28 minutes
+
+Memory usage: no memory leakage; Activity Monitor memory graph stayed in green the whole time 

@@ -361,9 +361,11 @@ let run candseats ballots candidate_names debug =
     Seq.drop 1 ballots else ballots 
   in
   let candidates = create_candidates candidate_names in
+  let total_votes = num_ballots ballots in
 
   let () = printf "Seats: %d\nNumber of candidates: %d\n" num_seats num_cands in
-  let () = printf "Informal votes: %d\n\n" num_informal_ballots in
+  let () = printf "Informal votes: %d\n" num_informal_ballots in
+  let () = printf "Total votes: %d\n\n" total_votes in
   let () = if debug then printf "Candidates at start:\n\n%a\n\n" pp_table candidates in
 
 
