@@ -1,6 +1,7 @@
 # NZSTV-OCaml
 
 ## Introduction
+Code for the New Zealand version of Single Transferable Vote (STV) written in OCaml. New Zealand STV uses Meek's method for transferring votes.
 
 This OCaml code is based on the pascal code written by David Hill and produces identical reports when run. A copy of [David Hill's pascal code](https://archive.org/details/meek-method-stv-of-dr-david-hill-david-hill-richard-lung/page/18/mode/2up?q=procedure+multiply) is included in the docs folder. This code is based on an earlier version ([Algorithm123](https://www.dia.govt.nz/diawebsite.NSF/Files/meekm/%24file/meekm.pdf)), which is also included.
 
@@ -9,7 +10,7 @@ The OCaml code aligns with the prescription for the New Zealand method of counti
 
 ## Pascal code
 
-A compilable version of David Hill's pascal code is here, which was created using Lee Yingtong Li's very helpful [notes](https://yingtongli.me/blog/2021/07/08/nzmeek.html).
+A compilable version of David Hill's pascal code is [here](https://github.com/wrmack/NZSTV-Pascal), which was created using Lee Yingtong Li's very helpful [notes](https://yingtongli.me/blog/2021/07/08/nzmeek.html).
 
 ## Blt files
 
@@ -32,6 +33,8 @@ The code reads ballots contained in a text file in .blt format. This is describe
 "Eve"
 "Example"         Title of election
 ```
+Example blt files are contained in the blt folder.
+
 ## To install
 
 Copy all files into a folder then:
