@@ -1,0 +1,4 @@
+(executable
+ (public_name nzstv)
+ (name main)
+ (libraries NZSTV_OCaml))
