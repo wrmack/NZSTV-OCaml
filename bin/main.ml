@@ -335,19 +335,19 @@ let end_election cands =
 
 let run candseats ballots candidate_names debug =
   
-  (* If not enough candidates *)
-  (* if IMap.cardinal choices <= nseats then
-    choices |> IMap.bindings |> List.map fst
-    |> (fun x -> `Win x :: events)
-    |> List.rev
-  
-  else *)
-
-  (* Print the title of the election *)
-
   let num_cands = List.nth candseats 0 in
   let num_seats = List.nth candseats 1 in
+  let candidates = create_candidates candidate_names in
 
+  (* If not enough candidates *)
+  if num_cands <= num_seats then 
+    let () = printf "**** End of election ****\n\n";
+      printf "All candidates are elected.\n\n";
+      printf "Elected:\n";
+      List.iter (fun c -> printf "  %s\n" c) candidate_names in
+      candidates
+  else
+    
   (* Number of ballots without any preferences *)
   let num_informal_ballots = 
     let first = match Seq.uncons ballots with 
@@ -360,7 +360,6 @@ let run candseats ballots candidate_names debug =
   let ballots_formal = if num_informal_ballots > 0 then 
     Seq.drop 1 ballots else ballots 
   in
-  let candidates = create_candidates candidate_names in
   let total_votes = num_ballots ballots in
 
   let () = printf "Seats: %d\nNumber of candidates: %d\n" num_seats num_cands in
@@ -589,9 +588,9 @@ let title, candidates =
   let title = List.drop (List.length list - 1) list in
   List.hd title, cand_list
   
-let () = Printf.printf "\nTitle: %s\n" title 
+let () = Printf.printf "\nTitle: %s\n\n" title 
 let () = if !verbose then begin
-  printf "\nCandidates/seats: %s\n" candseats; 
+  printf "Candidates/seats: %s\n" candseats; 
   printf "First 10 ballot lines:\n";
   Seq.iteri (fun i el -> if i < 10 then (printf "%a\n" pp_int_list el)) blt_ballots; 
   printf "\n"
