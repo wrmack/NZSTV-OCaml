@@ -49,7 +49,7 @@ _build/install/default/bin/nzstv <blt file>
 _build/install/default/bin/nzstv -v <blt file>
 
 # Example
-_build/install/default/bin/nzstv -v blt/Hill.blt
+_build/install/default/bin/nzstv -v blt/ers97.blt
 ```
 ## Performance
 
